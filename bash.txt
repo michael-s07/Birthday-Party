@@ -1,0 +1,41 @@
+$ git branch
+* master
+  moma
+  whitney
+$ git branch -d moma whitney
+error: The branch 'moma' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D moma'.
+error: The branch 'whitney' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D whitney'.
+$ git branch -D moma whitney
+Deleted branch moma (was 978e5a1).
+Deleted branch whitney (was 9b384f9).
+$ git branch unordered-list
+$ git checkout unordered-list
+Switched to branch 'unordered-list'
+$ git add index.html
+$ git commit -m '<p> on line 11 was replace by <ul>'
+[unordered-list d0d4f8f] <p> on line 11 was replace by <ul>
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+$ git checkout master
+Switched to branch 'master'
+$ git merge unordered-list
+Updating 1481f5a..d0d4f8f
+Fast-forward
+ index.html | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+$ git branch big-heading
+$ git checkout big-heading
+Switched to branch 'big-heading'
+$ git add index.html
+$ git commit -m 'The size of the h1 tag of kaybirth has been increse'
+[big-heading 137d5bd] The size of the h1 tag of kaybirth has been increse
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git checkout master
+Switched to branch 'master'
+$ git merge big-heading
+Updating d0d4f8f..137d5bd
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ 
